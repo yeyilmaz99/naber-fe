@@ -111,12 +111,41 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "naber-fe:ionic-cordova-build",
+            "devServerTarget": "naber-fe:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "naber-fe:ionic-cordova-build:production",
+              "devServerTarget": "naber-fe:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "naber-fe:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "naber-fe:build:production"
+            }
           }
         }
       }
