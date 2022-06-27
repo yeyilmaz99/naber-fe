@@ -24,12 +24,31 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/inc/bootstrap/bootstrap.min.css",
+              "src/assets/css/inc/owl-carousel/owl.carousel.min.css",
+              "src/assets/css/inc/owl-carousel/owl.theme.default.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/lib/jquery-3.4.1.min.js",
+              "src/assets/js/lib/popper.min.js",
+              "src/assets/js/lib/bootstrap.min.js",
+              "src/assets/js/plugins/owl-carousel/owl.carousel.min.js",
+              "src/assets/js/plugins/jquery-circle-progress/circle-progress.min.js",
+              "src/assets/js/base.js",
+              "src/service-worker.js"
+            ],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -91,7 +110,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.css"
